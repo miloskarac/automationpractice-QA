@@ -89,16 +89,19 @@ namespace AutomationPractice.Steps
 
         }
 
-        [When(@"submits the sign up from")]
-        public void WhenSubmitsTheSignUpFrom()
+        [When(@"submits the sign up form")]
+        public void WhenSubmitsTheSignUpForm()
         {
-            ScenarioContext.Current.Pending();
+            CreateAccountPage cap = new CreateAccountPage(Driver);
+            ut.ClickOnElement(cap.regBtn);
         }
+
 
         [Then(@"user's full name is displayed")]
         public void ThenUserSFullNameIsDisplayed()
         {
-            ScenarioContext.Current.Pending();
+            string fullName = ScenarioContext.Current.Get<string>(TestConstants.FullName);
+            Assert.True(ut.TextPresentInElement(fullName).Displayed, "User's full name is not displayed");
         }
 
         [Given(@"user enters a DRESS search term")]

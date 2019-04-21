@@ -124,7 +124,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 25
  testRunner.And("user enters all required personal details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.When("submits the sign up from", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("submits the sign up form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
  testRunner.Then("user will be logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
