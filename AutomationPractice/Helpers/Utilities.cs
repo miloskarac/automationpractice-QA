@@ -37,6 +37,17 @@ namespace AutomationPractice.Helpers
         public string GenerateRandomEmail()
         {
             return string.Format("email{0}@mailinator.com", RandomName.Next(100000, 1000000));
+
+       }
+
+        public void DropdownSelect(By select, string option)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(select));
+            var dropdown = driver.FindElement(select);
+            var selectElement = new SelectElement(dropdown);
+            selectElement.SelectByText(option);
         }
+
     }
 }

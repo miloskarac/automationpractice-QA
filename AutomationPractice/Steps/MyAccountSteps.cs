@@ -72,7 +72,21 @@ namespace AutomationPractice.Steps
         [Given(@"user enters all required personal details")]
         public void GivenUserEntersAllRequiredPersonalDetails()
         {
-            ScenarioContext.Current.Pending();
+            CreateAccountPage cap = new CreateAccountPage(Driver);
+            ut.EnterTextInElement(cap.firstName, TestConstants.FirstName);
+            ut.EnterTextInElement(cap.lastName, TestConstants.LastName);
+            string fullname = TestConstants.FirstName + " " + TestConstants.LastName;
+            ScenarioContext.Current.Add(TestConstants.FullName, fullname);
+            ut.EnterTextInElement(cap.password, TestConstants.Password1);
+            ut.EnterTextInElement(cap.firstN, TestConstants.FirstN);
+            ut.EnterTextInElement(cap.lastN, TestConstants.LastN);
+            ut.EnterTextInElement(cap.address, TestConstants.Address);
+            ut.EnterTextInElement(cap.city, TestConstants.City);
+            ut.DropdownSelect(cap.state, TestConstants.State);
+            ut.EnterTextInElement(cap.zipCode, TestConstants.ZipCode);
+            ut.EnterTextInElement(cap.mPhone, TestConstants.MobilePhone);
+            ut.EnterTextInElement(cap.alias, TestConstants.Alias);
+
         }
 
         [When(@"submits the sign up from")]
