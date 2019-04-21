@@ -1,2 +1,12 @@
+<<<<<<< HEAD
 *.xml
 *.dll
+=======
+*.pdb
+*.dll
+*.txt
+*.tmp
+*.suo
+*.cache
+*.xml
+>>>>>>> 8fc7cf055f1924e0bd77c3da16d1e74fe7726f82
