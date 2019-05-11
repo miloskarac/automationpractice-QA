@@ -29,7 +29,9 @@ namespace AutomationPractice.Helpers
         //search item
         public const string Item = "DRESS";
 
-        
+        //contact us
+        public const string CService = "Customer service";
+        public const string Msg = "I have a problem";
 
     }
 }

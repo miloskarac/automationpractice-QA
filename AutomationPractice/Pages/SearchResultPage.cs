@@ -15,7 +15,8 @@ namespace AutomationPractice.Pages
 
        
         public By firstDress = By.Id("color_22");
-        
+        public By searchResult = By.Id("columns");
+
 
         public SearchPage(IWebDriver driver)
         { 
