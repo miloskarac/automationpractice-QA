@@ -2,15 +2,15 @@
 using System;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
+using NUnit.Framework;
+using AutomationPractice.Helpers;
 
 namespace AutomationPractice.Steps
 {
     [Binding]
-    public class FooterSteps
+    public class FooterSteps:Base
     {
         Footer ft = new Footer(Driver);
-
-        public static IWebDriver Driver { get; private set; }
 
         [When(@"user clicks on '(.*)' option")]
         public void WhenUserClicksOnOption(string option)
@@ -24,7 +24,7 @@ namespace AutomationPractice.Steps
         [Then(@"correct '(.*)' is displayed")]
         public void ThenCorrectIsDisplayed(string pageName)
         {
-            
+            Assert.True(ft.InformationPageDisplayed(pageName), "Information page is not displayed");
         }
     }
 }

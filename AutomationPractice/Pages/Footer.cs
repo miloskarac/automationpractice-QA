@@ -34,6 +34,19 @@ namespace AutomationPractice.Pages
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(textElement)).Displayed;
         }
+
+        public void ClickOnMyAccountLink(string title)
+        {
+            By link = By.CssSelector(".bullet [title='" + title + "']");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(link)).Click();
+        }
+        public bool MyAccountInformationPageDisplayed(string pageName)
+        {
+            By textElement = By.XPath("//*[@class='navigation_page'][contains(text(),'" + pageName + "')]");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(textElement)).Displayed;
+        }
     }
 
 }
