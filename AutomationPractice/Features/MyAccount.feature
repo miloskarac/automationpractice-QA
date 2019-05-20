@@ -36,3 +36,12 @@ Scenario: User can search for a product and add it to the cart
     And user proceeds to checkout
     Then cart page is opened 
 	
+Scenario: User can update his Lastname	
+	Given user opens sign in page
+	And enters correct credentials 
+	And user submits the login form
+	And user clicks on my personal information button
+	And user change Lastname 
+	And user enters Current Password
+	When user submits the changes 
+	Then user lastname is changed

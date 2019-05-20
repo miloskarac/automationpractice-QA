@@ -111,14 +111,14 @@ namespace AutomationPractice.Steps
             ut.EnterTextInElement(hp.searchFld, TestConstants.Item);
         }
 
-            
+
         [Given(@"user submits the search")]
         public void GivenUserSubmitsTheSearch()
         {
             Homepage hp = new Homepage(Driver);
             ut.ClickOnElement(hp.searchBtn);
         }
-        
+
         [Given(@"opens first product from the list")]
         public void GivenOpensFirstProductFromTheList()
         {
@@ -130,7 +130,7 @@ namespace AutomationPractice.Steps
         [When(@"user clicks on add to cart button")]
         public void WhenUserClicksOnAddToCartButton()
         {
-            PDPPage pdpp= new PDPPage(Driver);
+            PDPPage pdpp = new PDPPage(Driver);
             ut.ClickOnElement(pdpp.addCBtn);
         }
 
@@ -148,8 +148,36 @@ namespace AutomationPractice.Steps
             //za then treba nova classa jer prelazimo na novi Page
         }
 
+      
+        [Given(@"user clicks on my personal information button")]
+        public void GivenUserClicksOnMyPersonalInformationButton()
+        {
+            MyAccount ma = new MyAccount(Driver);
+            ut.ClickOnElement(ma.MPInfo);
+        }
+     
+
+        
+        [Given(@"user change Lastname")]
+        public void GivenUserChangeLastname()
+        {
+            MPInfoPage mpip = new MPInfoPage(Driver);
+            ut.ClickOnElement(mpip.Lastname);
+            ut.ClearElement(mpip.Lastname);
+            ut.EnterTextInElement(mpip.Lastname, TestConstants.LName);
+        }
+        [Given(@"user enters Current Password")]
+        public void GivenUserEntersCurrentPassword()
+        {
+            MPInfoPage mpip = new MPInfoPage(Driver);
+            ut.EnterTextInElement(mpip.)
+        }
+
+
     }
 }
+
+
     
 
 

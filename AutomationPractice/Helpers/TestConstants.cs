@@ -33,5 +33,9 @@ namespace AutomationPractice.Helpers
         public const string CService = "Customer service";
         public const string Msg = "I have a problem";
 
+        //update Last name
+        public const string LName = "Petrovic";
+        public const string Password = "Boliglava11";
+
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="Pages\CreateAccountPage.cs" />
     <Compile Include="Pages\Footer.cs" />
     <Compile Include="Pages\Homepage.cs" />
+    <Compile Include="Pages\MPInfoPage.cs" />
     <Compile Include="Pages\MyAccount.cs" />
     <Compile Include="Pages\MyWishlist.cs" />
     <Compile Include="Pages\PDPPage.cs" />

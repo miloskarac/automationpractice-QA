@@ -8,28 +8,17 @@ using System.Threading.Tasks;
 
 namespace AutomationPractice.Pages
 {
-
-    class MyAccount
+    class MPInfoPage
     {
         readonly IWebDriver driver;
-        public By logout = By.ClassName("logout");
-        public By wishlist = By.ClassName("icon-heart");
-        public By MPInfo = By.ClassName("icon-user");
-        
-        public MyAccount(IWebDriver driver)
+        public By Lastname = By.Id("lastname");
+        public By.Password = By.Id("old_passwd");
+
+        public MPInfoPage (IWebDriver driver)
         {
             this.driver = driver;
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id("my-account")));
-
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id("center_column")));
         }
-
-        
-       
-
     }
-
-}  
-    
-    
-
+}

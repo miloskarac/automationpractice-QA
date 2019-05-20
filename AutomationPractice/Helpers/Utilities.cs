@@ -38,7 +38,7 @@ namespace AutomationPractice.Helpers
         {
             return string.Format("email{0}@mailinator.com", RandomName.Next(100000, 1000000));
 
-       }
+        }
 
         public void DropdownSelect(By select, string option)
         {
@@ -50,7 +50,7 @@ namespace AutomationPractice.Helpers
         }
 
 
-        public IWebElement TextPresentInElement (string text)
+        public IWebElement TextPresentInElement(string text)
         {
             By textElement = By.XPath("//*[contains(text(),'" + text + "')]");
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
@@ -61,5 +61,14 @@ namespace AutomationPractice.Helpers
         {
             return driver.FindElement(selector).GetAttribute("textContent");
         }
+
+
+
+        public void ClearElement(By selector)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(selector)).Clear();
+        }
+
     }
 }
